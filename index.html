@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibration Api</title>
+</head>
+<body>
+    <h1> Vibration Api</h1>
+    <script>
+        // check for the difference version of vibration api
+        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate  || navigator.msVibrate;
+
+        if(navigator.vibrate){
+            // vibration supported
+            document.body.addEventListener('click', function (ev){
+                console.log('body clicked. Time to shake.');
+                // navigator.vibrate(1000);
+                 navigator.vibrate([500, 300, 100]);
+                // navigator.vibrate(0);
+
+
+            });
+        }
+    </script>
+    
+</body>
+</html>
